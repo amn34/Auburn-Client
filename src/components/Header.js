@@ -3,10 +3,6 @@ import MultiColorProgressBar from './MultiColorProgressBar'
 const Header = (props) => {
     let readings = [
         {
-            name: 'Very low',
-            color: '#5afc35'
-        },
-        {
             name: 'Low',
             color: '#38ba6e'
         },
@@ -29,10 +25,10 @@ const Header = (props) => {
     ]
 
     return (
-        <header>
+        <header style={{'margin-top': '50px'}}>
             <h1>{props.title}</h1>
-            <p>COVID Risk Level</p>
             <MultiColorProgressBar readings={readings} vulnLevel={props.vulnLevel} />
+            <small>COVID Risk Level</small>
         </header>
     )
 }

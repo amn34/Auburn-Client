@@ -2,14 +2,19 @@ import { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import Stat from "./components/Stat";
 import Header from "./components/Header";
+import { CardDeck } from 'react-bootstrap'
 
 function App() {
   const [newCases, setNewCases] = useState(0);
+  const caseRange = [[0, 1], [1, 10], [10, 25], [25, 45], [45, 100000]]
   const [totalCases, setTotalCases] = useState(0);
   const [newDeaths, setNewDeaths] = useState(0);
+  const deathRange = [[0, 0], []]
   const [totalDeaths, setTotalDeaths] = useState(0);
   const [infectRate, setInfectRate] = useState(0);
+  const infectRange = [[0, 0.9], [0.9, 1.1], [1.1, 1.4], [1.4, 2.2], [2.2, 10000]]
   const [testRate, setTestRate] = useState(0);
+  const testRange = [[0, 3], [3, 10], [10, 20], [20, 33], [33, 100]]
   const [vaccAdmin, setAdminRate] = useState(0);
   const [vaccComplete, setCompleteRate] = useState(0);
   const [vulnLevel, setVulnLevel] = useState(0);
@@ -24,7 +29,7 @@ function App() {
     setTestRate(data["positive-test-rate"] * 100);
     setAdminRate(data["vaccines-administered"]);
     setCompleteRate(data["vaccines-completed"]);
-    setVulnLevel(data["vulnerability-level"]);
+    setVulnLevel(Math.min(4, data["vulnerability-level"]));
     setLocation(data["location"]);
   }
 
@@ -46,18 +51,18 @@ function App() {
       <Nav updateStats={updateStats} />
       <div className="container">
         <Header title={location} vulnLevel={vulnLevel} />
-        <div class="row">
-          <Stat stat={{ text: "Daily new Cases", number: newCases }} />
-          <Stat stat={{ text: "Total cases", number: totalCases }} />
-          <Stat stat={{ text: "Daily new deaths", number: newDeaths }} />
-          <Stat stat={{ text: "Total deaths", number: totalDeaths }} />
-        </div>
-        <div class="row">
-          <Stat stat={{ text: "Infection rate", number: infectRate.toFixed(1) }} />
-          <Stat stat={{ text: "Positive test rate", number: testRate.toFixed(1) }} />
-          <Stat stat={{ text: "Vaccines administered", number: vaccAdmin }} />
-          <Stat stat={{ text: "Vaccines completed", number: vaccComplete }} />
-        </div>
+          <CardDeck className="mt-5">
+            <Stat stat={{ text: "Daily new cases", number: newCases + ' per 100k', range: caseRange }} />
+            <Stat stat={{ text: "Total cases", number: totalCases }} />
+            <Stat stat={{ text: "Daily new deaths", number: newDeaths }} />
+            <Stat stat={{ text: "Total deaths", number: totalDeaths }} />
+          </CardDeck>
+          <CardDeck className="mt-4">
+            <Stat stat={{ text: "Infection rate", number: infectRate.toFixed(1) }} />
+            <Stat stat={{ text: "Positive test rate", number: testRate.toFixed(1) + '%'}} />
+            <Stat stat={{ text: "Vaccines administered", number: vaccAdmin }} />
+            <Stat stat={{ text: "Vaccines completed", number: vaccComplete }} />
+          </CardDeck>
       </div>
     </div>
   );

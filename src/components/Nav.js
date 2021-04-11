@@ -27,10 +27,10 @@ export default function Nav(props) {
 
     return (
         <Navbar expand="lg">
-            <Navbar.Brand>COVID Stats</Navbar.Brand>
+            <Navbar.Brand>Healthy State</Navbar.Brand>
             <FaSearch />
             <Form onSubmit={function (e) { parseLocation(location); e.preventDefault(); }} inline style={navStyle}>
-                <FormControl onSubmit={() => parseLocation(location)} onChange={(e) => setLocation(e.target.value)} id="location" type="text" placeholder="Type a city/state" className="mr-sm-2" />
+                <FormControl onSubmit={() => parseLocation(location)} onChange={(e) => setLocation(e.target.value)} id="location" type="text" placeholder="Enter a city, state" className="mr-sm-2" />
                 <Button onClick={() => parseLocation(location)} variant="outline-success">Search</Button>
             </Form>
         </Navbar>
