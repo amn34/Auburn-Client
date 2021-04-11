@@ -28,7 +28,7 @@ const Header = (props) => {
         <header>
             <h1>{props.title}</h1>
             <p>COVID Risk Level</p>
-            <MultiColorProgressBar readings={readings} />
+            <MultiColorProgressBar readings={readings} vulnLevel={props.vulnLevel} />
         </header>
     )
 }
