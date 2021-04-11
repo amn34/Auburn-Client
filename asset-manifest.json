@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Auburn-Client/static/css/main.7de4ff07.chunk.css",
+    "main.js": "/Auburn-Client/static/js/main.9842ca38.chunk.js",
+    "main.js.map": "/Auburn-Client/static/js/main.9842ca38.chunk.js.map",
+    "runtime-main.js": "/Auburn-Client/static/js/runtime-main.46e947dd.js",
+    "runtime-main.js.map": "/Auburn-Client/static/js/runtime-main.46e947dd.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/Auburn-Client/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.b062a01e.chunk.js": "/Auburn-Client/static/js/2.b062a01e.chunk.js",
+    "static/js/2.b062a01e.chunk.js.map": "/Auburn-Client/static/js/2.b062a01e.chunk.js.map",
+    "static/js/3.088d644b.chunk.js": "/Auburn-Client/static/js/3.088d644b.chunk.js",
+    "static/js/3.088d644b.chunk.js.map": "/Auburn-Client/static/js/3.088d644b.chunk.js.map",
+    "index.html": "/Auburn-Client/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/Auburn-Client/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.7de4ff07.chunk.css.map": "/Auburn-Client/static/css/main.7de4ff07.chunk.css.map",
+    "static/js/2.b062a01e.chunk.js.LICENSE.txt": "/Auburn-Client/static/js/2.b062a01e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46e947dd.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.b062a01e.chunk.js",
+    "static/css/main.7de4ff07.chunk.css",
+    "static/js/main.9842ca38.chunk.js"
+  ]
+}
