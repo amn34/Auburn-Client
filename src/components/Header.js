@@ -3,6 +3,10 @@ import MultiColorProgressBar from './MultiColorProgressBar'
 const Header = (props) => {
     let readings = [
         {
+            name: 'Very low',
+            color: '#5afc35'
+        },
+        {
             name: 'Low',
             color: '#38ba6e'
         },

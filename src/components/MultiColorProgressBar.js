@@ -2,9 +2,6 @@ import React from 'react'
 import '../bar.css'
 
 class MultiColorProgressBar extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
 
@@ -13,7 +10,7 @@ class MultiColorProgressBar extends React.Component {
         let bars = parent.readings && parent.readings.length && parent.readings.map(function (item, i) {
             return (
                 <div className="bar" style={{
-                    'backgroundColor': item.color, 'width': 20 + '%',
+                    'backgroundColor': item.color, 'width': 100 / 6 + '%',
                     'border': this.props.vulnLevel === i ? '4px solid' : null
                 }} key={i} >
                 </div>
