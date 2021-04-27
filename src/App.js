@@ -4,18 +4,19 @@ import Stat from "./components/Stat";
 import Header from "./components/Header";
 import Vaccination from "./components/Vaccination"
 import { CardDeck } from 'react-bootstrap'
+import { Helmet } from "react-helmet"
 
 function App() {
   const [newCases, setNewCases] = useState(0);
   const caseRange = [[0, 1], [1, 10], [10, 25], [25, 45], [45, 100000]]
   const [totalCases, setTotalCases] = useState(0);
   const [newDeaths, setNewDeaths] = useState(0);
-  const deathRange = [[0, 0], []]
+  //const deathRange = [[0, 0], []]
   const [totalDeaths, setTotalDeaths] = useState(0);
   const [infectRate, setInfectRate] = useState(0);
-  const infectRange = [[0, 0.9], [0.9, 1.1], [1.1, 1.4], [1.4, 2.2], [2.2, 10000]]
+  //const infectRange = [[0, 0.9], [0.9, 1.1], [1.1, 1.4], [1.4, 2.2], [2.2, 10000]]
   const [testRate, setTestRate] = useState(0);
-  const testRange = [[0, 3], [3, 10], [10, 20], [20, 33], [33, 100]]
+  //const testRange = [[0, 3], [3, 10], [10, 20], [20, 33], [33, 100]]
   const [vaccAdmin, setAdminRate] = useState(0);
   const [vaccComplete, setCompleteRate] = useState(0);
   const [vulnLevel, setVulnLevel] = useState(0);
@@ -49,6 +50,14 @@ function App() {
 
   return (
     <div className="App">
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Healthy State Covid-19 Stats</title>
+        <link rel="canonical" href="http://healthystate.tech/" />
+        <meta name="description" content="Make informed decisions by tracking the spread of Covid19 in your city and state."/>
+      </Helmet>
+
       <Nav updateStats={updateStats} />
       <div className="container">
         <Header title={location} vulnLevel={vulnLevel} />
